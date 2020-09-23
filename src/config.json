@@ -1,0 +1,99 @@
+{
+  "mongoDb": {
+    "endpoint" : "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true",
+    "options" : {
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true
+    },
+    "dbName" : "getir-case-study"
+  },
+  "swagger": {
+    "swaggerDefinition": {
+      "openapi": "3.0.0",
+      "info": {
+        "title": "Getir back-end challange Docs",
+        "version": "1.0.0",
+        "description":
+        "Getir back-end challange",
+        "license": {
+          "name": "MIT",
+          "url": "https://choosealicense.com/licenses/mit/"
+        },
+        "contact": {
+          "name": "Berkay",
+          "url": "http://berkayopak.com",
+          "email": "berkayopak@gmail.com"
+        }
+      },
+      "components" : {
+        "schemas" : {
+          "demoRequest" : {
+            "properties": {
+              "startDate" : {
+                "type": "string",
+                "example": "2016-01-26"
+              },
+              "endDate": {
+                "type": "string",
+                "example": "2018-02-02"
+              },
+              "minCount": {
+                "type": "number",
+                "example": 2700
+              },
+              "maxCount": {
+                "type": "number",
+                "example": 3000
+              }
+            }
+          },
+          "demoResponse" : {
+            "properties": {
+              "code": {
+                "type": "number"
+              },
+              "msg": {
+                "type": "string"
+              },
+              "records": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "totalCount": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "serverError": {
+            "properties": {
+              "error": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "http://localhost:3000/v1/"
+        }
+      ]
+    },
+    "apis": ["src/routes/index.js"]
+  }
+}
